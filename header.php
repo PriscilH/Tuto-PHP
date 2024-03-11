@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
     <!-- php -S localhost:8000 -->
@@ -25,10 +26,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link <?php if ($nav === 'index'): ?>active<?php endif; ?>" href="/index.php">Accueil</a>
+              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/index.php'): ?>active<?php endif; ?>" href="/index.php">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php if ($nav === 'contact'): ?>active<?php endif; ?>" href="/contact.php">Contact</a>
+              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/contact.php'): ?>active<?php endif; ?>" href="/contact.php">Contact</a>
             </li>
         </div>
       </div>

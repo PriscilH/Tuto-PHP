@@ -1,8 +1,8 @@
 <?php 
 $title = "Page d'accueil";
-$nav = "index";
 require 'header.php'; 
 ?>
+
   <body>
     <div class="container my-5">
       <h1>Hello, world!</h1>
