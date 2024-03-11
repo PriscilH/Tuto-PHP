@@ -1,5 +1,7 @@
-
-  <?php require 'header.php'; ?>
+<?php 
+$title = "Page d'accueil";
+require 'header.php'; 
+?>
   <body>
     <div class="container my-5">
       <h1>Hello, world!</h1>
