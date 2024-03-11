@@ -1,4 +1,4 @@
-<?php require 'header.js'; ?>
+<?php require 'header.php'; ?>
 
 <h2>Nous Contactez</h2>
 
