@@ -31,6 +31,9 @@
             <li class="nav-item">
               <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/contact.php'): ?>active<?php endif; ?>" href="/contact.php">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/jeu.php'): ?>active<?php endif; ?>" href="/jeu.php">Jeu</a>
+            </li>
         </div>
       </div>
     </nav>
