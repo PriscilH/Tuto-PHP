@@ -32,7 +32,9 @@ require 'header.php';
     <?php endif ?>
 
     <form action="/jeu.php" method="GET">
-        <input type="number" name="chiffre" placeholder="entre 0 et 1000" value="<?= $value ?>">
-        <button type="submit">Deviner</button>
+        <div class="form-group">
+        <input type="number" class="form-control mb-3" name="chiffre" placeholder="entre 0 et 1000" value="<?= $value ?>">
+        </div>
+        <button type="submit" class="btn btn-primary">Deviner</button>
     </form>
 </div>
