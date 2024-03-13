@@ -6,15 +6,15 @@ $succes = null;
 $value = null;
 
 //  Vérifier si la variable $_GET['chiffre'] est définie avant de l'utiliser
-if (isset($_GET['chiffre'])) {
-    if ($_GET['chiffre'] > $aDeviner) {
+if (isset($_POST['chiffre'])) {
+    $value = (int)$_POST['chiffre'];
+    if ($value > $aDeviner) {
         $erreur = "Votre chiffre est trop grand";
-    } elseif ($_GET['chiffre'] < $aDeviner) {
+    } elseif ($value < $aDeviner) {
         $erreur = "Votre chiffre est trop petit";
     } else {
         $succes = "Bravo ! Vous avez deviné le chiffre <strong>$aDeviner</strong>";
     }
-    $value = (int)$_GET['chiffre'];
 }
 
 require 'header.php';
@@ -33,7 +33,8 @@ require 'header.php';
 
     <form action="/jeu.php" method="GET">
         <div class="form-group">
-        <input type="number" class="form-control mb-3" name="chiffre" placeholder="entre 0 et 1000" value="<?= $value ?>">
+        <input type="number" class="form-control mb-3
+        " name="chiffre" placeholder="entre 0 et 1000" value="<?= $value ?>">
         </div>
         <button type="submit" class="btn btn-primary">Deviner</button>
     </form>
