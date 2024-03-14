@@ -21,3 +21,14 @@ function radio(string $name, string $value, array $data): string
     <input type="radio" name="{$name}" value="$value" $attributes>
 HTML;
 }
+
+function creneaux_html(array $creneaux) {
+    if (empty($creneaux) === 0){
+        return 'Fermé';
+    }
+    $phrases = [];
+    foreach ($creneaux as $creneau) {
+        $phrases[] = "de <strong>{$creneau[0]}h</strong> à <strong>{$creneau[1]}h</strong>";
+    }
+    return 'Ouvert ' . implode(' et ', $phrases);
+}
