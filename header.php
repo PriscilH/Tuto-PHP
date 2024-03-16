@@ -37,6 +37,9 @@
             <li class="nav-item">
               <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/glace.php'): ?>active<?php endif; ?>" href="/glace.php">Ice Cream</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/menu.php'): ?>active<?php endif; ?>" href="/menu.php">Menu</a>
+            </li>
         </div>
       </div>
     </nav>

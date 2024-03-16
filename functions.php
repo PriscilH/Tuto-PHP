@@ -54,3 +54,9 @@ function in_creneaux(int $heure, array $creneaux): bool
     }
     return false;
 }
+
+function dump ($variable) {
+    echo '<pre>';
+    var_dump($variable);
+    echo '</pre>';
+}
