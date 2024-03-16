@@ -1,6 +1,6 @@
 <?php 
 $title = "Page d'accueil";
-require 'header.php'; 
+require 'elements/header.php'; 
 ?>
 
   <body>

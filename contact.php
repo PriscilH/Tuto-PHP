@@ -1,6 +1,6 @@
 <?php
 $title = "Page de contact";
-require_once 'config.php';
+require_once 'data/config.php';
 require_once 'functions.php';
 date_default_timezone_set('Europe/Paris');
 // Récupérer l'heure d'aujourd'hui $heure
@@ -11,7 +11,7 @@ $creneaux = CRENEAUX[$jour];
 // Récupérer l'état d'ouverture du magasin
 $ouvert = in_creneaux($heure, $creneaux);
 $color = $ouvert ? 'green' : 'red';
-require 'header.php';
+require 'elements/header.php';
 ?>
 
 

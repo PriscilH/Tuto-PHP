@@ -35,7 +35,7 @@ foreach (['parfum', 'supplement', 'cornet'] as $name) {
     }
 }
 
-require 'header.php';
+require 'elements/header.php';
 require 'functions.php';
 ?>
 
