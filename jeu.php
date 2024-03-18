@@ -31,7 +31,7 @@ require 'elements/header.php';
         </div>
     <?php endif ?>
 
-    <form action="/jeu.php" method="GET">
+    <form action="/jeu.php" method="POST">
         <div class="form-group">
         <input type="number" class="form-control mb-3
         " name="chiffre" placeholder="entre 0 et 1000" value="<?= $value ?>">
