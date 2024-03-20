@@ -1,41 +1,38 @@
 <?php
 $title = "Page profil";
-// Exemple 1
-// if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
-//     unset($_COOKIE['user']);
-//     setcookie('user', '', time() - 10);
-// }
-$nom = null;
-// if (!empty($_COOKIE['user'])) {
-//     $nom = $_COOKIE['user'];
-// }
-// if (!empty($_POST['nom'])) {
-//     setcookie('user', $_POST['nom']);
-//     $nom = $_POST['nom'];
-// }
+
+$age = null;
+
+if (!empty($_POST['birthday'])) {
+    $birthday = (int)$_POST['birthday']; 
+    $age = (int)date('Y') - $birthday;
+    setcookie('birthday', $birthday, time() + 60 * 60 * 24);
+} elseif (!empty($_COOKIE['birthday'])) {
+    $age = (int)date('Y') - (int)$_COOKIE['birthday'];
+}
+
+
 
 require 'elements/header.php';
 ?>
 
 <div class="container">
-
-    <?php if ($nom) : ?>
-        <h1>Bonjour <?= isset($nom) ? htmlentities($nom) : "" ?></h1>
-        <a href="profil.php?action=deconnecter">Se déconnecter</a>
-    <?php else : ?>
-
-        <form action="" method="post">
-            <div class="form-group">
-                <label for="birthday">Section adultes, entrer votre année de naissance :</label>
-                <select name="birthday" class="form-control">
-                    <?php for ($i = 2012; $i > 1990; $i--) : ?>
-                        <option value="<?= $i ?>"><?= $i ?></option>
-                    <?php endfor ?>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">
-                Envoyer
-            </button>
-        </form>
+   <?php if ($age >= 18): ?>
+    <h1>Contenu pour adultes</h1>
+<?php elseif ($age !== null): ?>
+    <div class="alert alert-danger">Vous n'avez pas l'âge requis pour voir ce contenu</div>
+<?php else: ?>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="birthday">Section adultes, entrez votre année de naissance :</label>
+            <select name="birthday" id="birthday" class="form-control">
+                <?php for ($i = 2012; $i > 1990; $i--) : ?>
+                <option value="<?= $i ?>"><?= $i ?></option>
+                <?php endfor ?>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
+    </form>
+<?php endif; ?> 
 </div>
-<?php endif; ?>
+
