@@ -43,6 +43,9 @@
             <li class="nav-item">
               <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/newsletter.php'): ?>active<?php endif; ?>" href="/newsletter.php">Newsletter</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/profil.php'): ?>active<?php endif; ?>" href="/profil.php">Profil user</a>
+            </li>
         </div>
       </div>
     </nav>
