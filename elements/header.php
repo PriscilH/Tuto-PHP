@@ -49,3 +49,9 @@
         </div>
       </div>
     </nav>
+    <div class="row">
+      <?php
+      require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
+      ajouter_vue()
+      ?>
+    </div>
