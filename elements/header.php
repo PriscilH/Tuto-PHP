@@ -49,9 +49,11 @@
     </div>
   </div>
 </nav>
-<div class="row">
+<div class="container">
   <?php
   require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
   ajouter_vue();
+  $vues = nombre_vues()
   ?>
+  Il y a <?= $vues ?> vue<?php if ($vues > 1): ?>s<?php endif; ?> sur le site
 </div>
