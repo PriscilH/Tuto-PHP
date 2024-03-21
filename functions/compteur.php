@@ -5,7 +5,7 @@ function ajouter_vue() {
     if (file_exists($fichier)) {
         $compteur = (int)file_get_contents($fichier);
         $compteur++;
-    } else {
+    } 
         file_put_contents($fichier, $compteur);
     }
-}
+
