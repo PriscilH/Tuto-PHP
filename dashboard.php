@@ -1,4 +1,5 @@
 <?php
+require 'functions/auth.php';
 require 'functions/compteur.php';
 $annee = (int)date('Y');
 $annee_select = empty($_GET['annee']) ? null : (int)$_GET['annee'];
