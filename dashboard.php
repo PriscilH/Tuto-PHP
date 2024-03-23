@@ -1,5 +1,6 @@
 <?php
 require 'functions/auth.php';
+user_connect();
 require 'functions/compteur.php';
 $annee = (int)date('Y');
 $annee_select = empty($_GET['annee']) ? null : (int)$_GET['annee'];
@@ -8,7 +9,7 @@ if ($annee_select && $mois_select) {
     $total = nombre_vues_mois($annee_select, $mois_select);
     $detail = nombre_vues_detail_mois($annee_select, $mois_select);
 } else {
-   $total = nombre_vues(); 
+    $total = nombre_vues();
 }
 
 $mois = [
@@ -54,7 +55,7 @@ require 'elements/header.php';
                     Visite<?= $total > 1 ? 's' : '' ?> total
                 </div>
             </div>
-            <?php if (isset($detail)): ?>
+            <?php if (isset($detail)) : ?>
                 <h2>Détails des visites par mois</h2>
                 <table class="table table-striped">
                     <thead>
@@ -64,15 +65,15 @@ require 'elements/header.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($detail as $ligne): ?>
-                        <tr>
-                            <td><?= $ligne['jour'] ?></td>
-                            <td><?= $ligne['visites'] ?> visite<?= $ligne['visites'] > 1 ? 's' : '' ?> </td>
-                        </tr>
+                        <?php foreach ($detail as $ligne) : ?>
+                            <tr>
+                                <td><?= $ligne['jour'] ?></td>
+                                <td><?= $ligne['visites'] ?> visite<?= $ligne['visites'] > 1 ? 's' : '' ?> </td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <?php endif; ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
