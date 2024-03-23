@@ -1,9 +1,13 @@
 <?php
 require 'functions/compteur.php';
-$total = nombre_vues();
 $annee = (int)date('Y');
 $annee_select = empty($_GET['annee']) ? null : (int)$_GET['annee'];
-$mois_select = empty($_GET['mois']) ? null : (int)$_GET['mois'];
+$mois_select = empty($_GET['mois']) ? null : $_GET['mois'];
+if ($annee_select && $mois_select) {
+    $total = nombre_vues_mois($annee_select, $mois_select);
+} else {
+   $total = nombre_vues(); 
+}
 $mois = [
     '01' => 'Janvier',
     '02' => 'Février',
@@ -31,7 +35,7 @@ require 'elements/header.php';
                     <?php if ($annee - $i === $annee_select) : ?>
                         <div class="list-group">
                             <?php foreach ($mois as $numero => $nom) : ?>
-                                <a class="list-group-item" <?= $numero === $mois_select ? 'active' : '' ?> href="dashboard.php?annee<?= $annee_select ?>&mois=<?= $numero ?>">
+                                <a class="list-group-item" <?= $numero === $mois_select ? 'active' : '' ?> href="dashboard.php?annee=<?= $annee_select ?>&mois=<?= $numero ?>">
                                     <?= $nom ?>
                                 </a>
                             <?php endforeach ?>
