@@ -1,7 +1,7 @@
 <?php
-require 'functions/auth.php';
+require_once 'functions/auth.php';
 user_connect();
-require 'functions/compteur.php';
+require_once 'functions/compteur.php';
 $annee = (int)date('Y');
 $annee_select = empty($_GET['annee']) ? null : (int)$_GET['annee'];
 $mois_select = empty($_GET['mois']) ? null : $_GET['mois'];

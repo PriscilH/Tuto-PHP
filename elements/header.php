@@ -1,3 +1,7 @@
+<?php
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php'; 
+?>
+
 <!doctype html>
 <html lang="en">
 <!-- php -S localhost:8000 -->
@@ -49,6 +53,12 @@
         <li class="nav-item">
           <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/dashboard.php') : ?>active<?php endif; ?>" href="/dashboard.php">Dashboard</a>
         </li>
+      </ul>
+      <ul class="navbar-nav">
+        <?php if (connecter()): ?>
+          <li class="nav-item"><a href="/logout.php" class="nav-link">Se déconnecter</a> </li>
+        <?php endif; ?>
+      </ul>
     </div>
   </div>
 </nav>
@@ -58,5 +68,5 @@
   ajouter_vue();
   $vues = nombre_vues()
   ?>
-  Il y a <?= $vues ?> vue<?php if ($vues > 1): ?>s<?php endif; ?> sur le site
+  Il y a <?= $vues ?> vue<?php if ($vues > 1) : ?>s<?php endif; ?> sur le site
 </div>

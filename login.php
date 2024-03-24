@@ -11,7 +11,13 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     }
 }
 
-require 'elements/header.php';
+require_once 'functions/auth.php';
+if (connecter()) {
+    header('Location: /dashboard.php');
+        exit();
+}
+
+require_once 'elements/header.php';
 ?>
 
 <div class="container mt-3">
