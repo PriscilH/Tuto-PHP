@@ -1,11 +1,11 @@
 <?php
-$date = '2024-03-01';
+$date = '2020-03-01';
 $date2 = '2024-06-01';
 
 $d = new DateTime($date);
 $d2 = new DateTime($date2);
 $diff = $d->diff($d2, true);
-echo "Il y a {$diff->days} jours de différence";
+echo "Il y a {$diff->y} années, {$diff->m} mois et {$diff->d} jours de différence";
 
 echo "\n";
 
@@ -23,6 +23,3 @@ echo "Il y a $days jours de différence";
 
 // Fonction pour lire le fichier
 // echo file_get_contents($fichier);
-
-
-
