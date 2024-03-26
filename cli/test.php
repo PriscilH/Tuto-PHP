@@ -1,18 +1,22 @@
 <?php
-$date = '2020-03-01';
-$date2 = '2024-06-01';
+// Période de 1 mois = P1M 1jour = 1D 1minute = T1M
+$interval = new DateInterval('P1M1DT1M');
+var_dump($interval);
 
-$d = new DateTime($date);
-$d2 = new DateTime($date2);
-$diff = $d->diff($d2, true);
-echo "Il y a {$diff->y} années, {$diff->m} mois et {$diff->d} jours de différence";
+// $date = '2020-03-01';
+// $date2 = '2024-06-01';
 
-echo "\n";
+// $d = new DateTime($date);
+// $d2 = new DateTime($date2);
+// $diff = $d->diff($d2, true);
+// echo "Il y a {$diff->y} années, {$diff->m} mois et {$diff->d} jours de différence";
 
-$time = strtotime($date);
-$time2 = strtotime($date2);
-$days = floor(abs(($time - $time2) / (24 * 60 * 60)));
-echo "Il y a $days jours de différence";
+// echo "\n";
+
+// $time = strtotime($date);
+// $time2 = strtotime($date2);
+// $days = floor(abs(($time - $time2) / (24 * 60 * 60)));
+// echo "Il y a $days jours de différence";
 
 
 // Chemin absolu du fichier
