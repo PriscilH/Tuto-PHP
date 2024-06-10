@@ -1,7 +1,11 @@
 <?php
 // Période de 1 mois = P1M 1jour = 1D 1minute = T1M
-$interval = new DateInterval('P1M1DT1M');
-var_dump($interval);
+$date = new DateTime('2024-07-02');
+$interval = new DateInterval('P1M1DT1M'); 
+$date->add($interval); // cela ajoutera 1 jour 1 mois et 1 min à la date
+// soit 2024-08-03 00:01:00.000000
+
+var_dump($date); // php cli/test.php
 
 // $date = '2020-03-01';
 // $date2 = '2024-06-01';
